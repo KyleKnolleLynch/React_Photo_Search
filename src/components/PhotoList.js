@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import '../css/photoList.css';
+import PhotoCard from './PhotoCard';
 
-
-const PhotoList = (props) => {
-   const photos = props.photos.map(photo => {
-     return <img src={photo.urls.regular} alt="pics" />
+const PhotoList = props => {
+  const photos = props.photos.map((photo) => {
+    return <PhotoCard key={photo.id} photo={photo} />;
   });
-return <div>{photos}</div>
-}
+  return (
+ 
+  <div className="wrapper">{photos}</div>
+ 
+  );
+};
 
-export default PhotoList
+export default PhotoList;
